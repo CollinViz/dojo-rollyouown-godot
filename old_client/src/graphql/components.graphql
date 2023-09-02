@@ -1,0 +1,40 @@
+query AvailableGames {
+  gameComponents(first: 10) {
+    totalCount
+    edges {
+      node {
+        creator
+        num_players
+        max_players
+        max_turns
+        start_time
+      }
+      cursor
+    }
+  }
+}
+
+query GlobalScores($limit: Int) {
+  playerComponents(
+    first: $limit
+    where: { turns_remaining: 0 }
+    order: { direction: DESC, field: CASH }
+  ) {
+    totalCount
+    edges {
+      node {
+        cash
+        entity {
+          keys
+          components {
+            __typename
+            ... on Name {
+              short_string
+            }
+          }
+        }
+      }
+      cursor
+    }
+  }
+}

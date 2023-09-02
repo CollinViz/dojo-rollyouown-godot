@@ -1,21 +1,22 @@
-import styled from "styled-components";
+import styled from "styled-components"; 
 import { store } from "../store/store";
 import { Wrapper } from "./wrapper";
-import { SpawnBtn } from "./spawnbtn";
+import { SpawnBtn } from "./spawnbtn"; 
+ 
 
-export const UI = () => {
+export const UI = ( ) => {
     const layers = store((state) => {
         return {
-            networkLayer: state.networkLayer,
-            phaserLayer: state.phaserLayer,
+            networkLayer: state.networkLayer 
         };
     });
 
-    if (!layers.networkLayer || !layers.phaserLayer) return <></>;
-
+    if (!layers.networkLayer  ) return <>No network node</>;
+    //const world = namespaceWorld(layers.networkLayer.world, "phaser");
     return (
         <Wrapper>
             <HeaderContainer>
+                 
                 <SpawnBtn />
 
             </HeaderContainer>
@@ -24,12 +25,8 @@ export const UI = () => {
 };
 
 const HeaderContainer = styled.div`
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
     display: flex;
-    flex-direaction: row;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `;

@@ -1,3 +1,14 @@
+## fix gen cod 
+// @ts-nocheck
+old_client/src/generated/graphql.ts
+
+
+
+
+
+
+
+
 ## Dojo create-phaser-app
 
 The pattern here is inherited from mud.dev and is a simple example of how to use the dojo engine with create-phaser-app.

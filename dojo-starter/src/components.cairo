@@ -5,3 +5,5 @@ mod drug;
 mod location;
 mod risks;
 mod name;
+mod Position;
+mod Moves;

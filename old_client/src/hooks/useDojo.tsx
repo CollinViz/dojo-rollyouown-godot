@@ -1,13 +1,12 @@
 import { Account, RpcProvider } from "starknet";
-import { NetworkLayer } from "../dojo/createNetworkLayer";
-import { PhaserLayer } from "../phaser";
+import { NetworkLayer } from "../dojo/createNetworkLayer"; 
 import { store } from "../store/store";
 import { useBurner } from "@dojoengine/create-burner";
 
 export type UIStore = ReturnType<typeof useDojo>;
 
 export const useDojo = () => {
-    const { networkLayer, phaserLayer } = store();
+    const { networkLayer } = store();
 
     const provider = new RpcProvider({
         nodeUrl: import.meta.env.VITE_PUBLIC_NODE_URL,
@@ -23,13 +22,10 @@ export const useDojo = () => {
         }
     );
 
-    if (phaserLayer === null) {
-        throw new Error("Store not initialized");
-    }
+     
 
     return {
-        networkLayer: networkLayer as NetworkLayer,
-        phaserLayer: phaserLayer as PhaserLayer,
+        networkLayer: networkLayer as NetworkLayer, 
         account: {
             create,
             list,

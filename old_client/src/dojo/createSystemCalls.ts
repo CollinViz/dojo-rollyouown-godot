@@ -37,12 +37,15 @@ export function createSystemCalls(
 
             const events = parseEvent(receipt)
             const entity = parseInt(events[0].entity.toString()) as EntityIndex
-
+            console.log(entity)
+            console.log(events)
             const movesEvent = events[0] as Moves;
+            
             setComponent(contractComponents.Moves, entity, { remaining: movesEvent.remaining })
 
             const positionEvent = events[1] as Position;
             setComponent(contractComponents.Position, entity, { x: positionEvent.x, y: positionEvent.y })
+            return JSON.stringify(events);
         } catch (e) {
             console.log(e)
             Position.removeOverride(positionId);

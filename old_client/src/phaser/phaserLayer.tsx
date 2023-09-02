@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { NetworkLayer } from "../dojo/createNetworkLayer";
-import { store } from "../store/store";
+
 import { usePhaserLayer } from "../hooks/usePhaserLayer";
 
 type Props = {
@@ -15,7 +15,7 @@ export const PhaserLayer = ({ networkLayer }: Props) => {
 
     useEffect(() => {
         if (phaserLayer) {
-            store.setState({ phaserLayer });
+             
 
             console.log("Setting phaser layer");
         }

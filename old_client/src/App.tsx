@@ -1,14 +1,14 @@
 
 import './App.css';
 import { useEffect } from 'react';
-import { useNetworkLayer } from './hooks/useNetworkLayer';
-import { PhaserLayer } from './phaser/phaserLayer';
+import { useNetworkLayer } from './hooks/useNetworkLayer'; 
 import { store } from "./store/store";
 import { UI } from './ui';
 
+
 function App() {
   const networkLayer = useNetworkLayer();
-
+   
   useEffect(() => {
     if (!networkLayer) return;
 
@@ -20,10 +20,8 @@ function App() {
 
 
   return (
-    <div>
-      <PhaserLayer networkLayer={networkLayer} />
-
-      <UI />
+    <div>   
+      <UI  />
     </div>
   );
 }
