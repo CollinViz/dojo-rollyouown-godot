@@ -1,0 +1,23 @@
+{
+  "name": "basichtml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dojoengine/core": "^0.0.17",
+    "@dojoengine/create-burner": "^0.0.15",
+    "@latticexyz/phaserx": "^1.43.0",
+    "@latticexyz/recs": "^1.43.0",
+    "@latticexyz/utils": "^1.43.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "graphql": "^16.8.0",
+    "graphql-request": "^6.1.0"
+  }
+}
