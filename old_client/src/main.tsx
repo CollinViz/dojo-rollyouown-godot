@@ -6,6 +6,7 @@ declare global {
         components?: any;
         network?: any;
         account?: any;
+        _account?: any;
     }
   }
   

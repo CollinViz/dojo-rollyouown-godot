@@ -11,11 +11,29 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Button" type="Button" parent="CenterContainer"]
-margin_left = 486.0
-margin_top = 290.0
-margin_right = 538.0
-margin_bottom = 310.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 462.0
+margin_top = 266.0
+margin_right = 562.0
+margin_bottom = 334.0
+
+[node name="Burnner" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 20.0
+text = "Create Burner"
+
+[node name="Spawmer" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 100.0
+margin_bottom = 44.0
 text = "Spawn"
 
-[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_Button_pressed"]
+[node name="CreateGame" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 100.0
+margin_bottom = 68.0
+text = "Create Game"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Burnner" to="." method="_on_Burnner_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Spawmer" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreateGame" to="." method="_on_CreateGame_pressed"]

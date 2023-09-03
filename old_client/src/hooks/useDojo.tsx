@@ -22,7 +22,11 @@ export const useDojo = () => {
         }
     );
 
-     
+    const updateUserAccount =async () => {
+        debugger;
+        const new_account = await create();
+        window.account = new_account;
+    };
 
     return {
         networkLayer: networkLayer as NetworkLayer, 
@@ -32,7 +36,8 @@ export const useDojo = () => {
             get,
             account: account ? account : masterAccount,
             select,
-            isDeploying
+            isDeploying,
+            updateUserAccount
         }
     }
 };

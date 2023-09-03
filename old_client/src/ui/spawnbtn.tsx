@@ -3,14 +3,14 @@ import { ClickWrapper } from "./clickWrapper";
 
 export const SpawnBtn = () => {
     const {
-        account: {
+        account: { 
             account
         },
         networkLayer: {
             systemCalls: { spawn },
         },
     } = useDojo();
-
+    
     return (
         <ClickWrapper>
             {/* <button onClick={create}>{isDeploying ? "deploying burner" : "create burner"}</button>

@@ -8,11 +8,71 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ColorRect",
+"class": "ColorTile",
+"language": "GDScript",
+"path": "res://addons/color-palette/ColorTile.gd"
+}, {
+"base": "Resource",
+"class": "DialogueResource",
+"language": "GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
+"base": "Container",
+"class": "FlexGridContainer",
+"language": "GDScript",
+"path": "res://addons/color-palette/utilities/FlexGridContainer.gd"
+}, {
+"base": "Node",
+"class": "GQLClient",
+"language": "GDScript",
+"path": "res://addons/GodotGraphQL/gql_client.gd"
+}, {
+"base": "Reference",
+"class": "GQLQuery",
+"language": "GDScript",
+"path": "res://addons/GodotGraphQL/gql_query.gd"
+}, {
+"base": "Node",
+"class": "GQLQueryExecuter",
+"language": "GDScript",
+"path": "res://addons/GodotGraphQL/gql_query_executer.gd"
+}, {
+"base": "Reference",
+"class": "Palette",
+"language": "GDScript",
+"path": "res://addons/color-palette/Palette.gd"
+}, {
+"base": "Reference",
+"class": "PaletteImporter",
+"language": "GDScript",
+"path": "res://addons/color-palette/PaletteImporter.gd"
+} ]
+_global_script_class_icons={
+"ColorTile": "",
+"DialogueResource": "",
+"FlexGridContainer": "res://addons/color-palette/utilities/FlexGridContainerIcon.png",
+"GQLClient": "",
+"GQLQuery": "",
+"GQLQueryExecuter": "",
+"Palette": "",
+"PaletteImporter": ""
+}
+
 [application]
 
 config/name="Dojo_Roll_Your_Own"
 run/main_scene="res://UI/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/color-template-editor/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg" )
 
 [gui]
 

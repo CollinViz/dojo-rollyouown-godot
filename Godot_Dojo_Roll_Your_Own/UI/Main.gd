@@ -50,3 +50,11 @@ func _on_Button_pressed() -> void:
 	#JavaScript.eval("window.alert('Hello from Godot!');")
 	#JavaScript.eval("window.systemCalls.spawn(window.account);")
 
+
+
+func _on_CreateGame_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_Burnner_pressed() -> void:
+	pass # Replace with function body.
