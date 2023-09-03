@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/1_NightDrive.mp3-32029666b7d8f2f5c5112160e1ddf4d2.mp3str"
+
+[deps]
+
+source_file="res://medias/1_NightDrive.mp3"
+dest_files=[ "res://.import/1_NightDrive.mp3-32029666b7d8f2f5c5112160e1ddf4d2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/7_Dark_Moody.mp3-e7880b11d2f939d192ee103b4bd9895d.mp3str"
+
+[deps]
+
+source_file="res://medias/7_Dark_Moody.mp3"
+dest_files=[ "res://.import/7_Dark_Moody.mp3-e7880b11d2f939d192ee103b4bd9895d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

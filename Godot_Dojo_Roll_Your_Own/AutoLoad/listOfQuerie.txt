@@ -1,0 +1,33 @@
+query allDrug {
+   drugComponents {
+     edges {
+       node {
+         quantity
+         entity{
+          keys
+          componentNames
+        }
+       }
+     }
+   }
+}
+
+
+query allGames {
+   gameComponents {
+     edges {
+       node {
+         start_time
+         max_players
+         num_players
+         max_turns
+         is_finished
+         creator
+        entity{
+          keys
+        }
+       }
+     }
+   } 
+}
+

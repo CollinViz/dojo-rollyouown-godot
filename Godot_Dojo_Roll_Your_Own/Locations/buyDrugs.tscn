@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://texture/drugs/acid.png" type="Texture" id=1]
+[ext_resource path="res://Locations/buyDrugs.gd" type="Script" id=2]
+
+[node name="Control" type="ColorRect"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+color = Color( 1, 0, 0.301961, 1 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="pic" type="TextureRect" parent="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="Price" type="Label" parent="VBoxContainer"]
+margin_top = 56.0
+margin_right = 100.0
+margin_bottom = 70.0
+text = "56.56"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 74.0
+margin_right = 100.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Buy"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

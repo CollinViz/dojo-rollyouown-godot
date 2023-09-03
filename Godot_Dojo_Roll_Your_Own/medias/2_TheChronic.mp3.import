@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2_TheChronic.mp3-9871f2e7359a19190efbc300df478938.mp3str"
+
+[deps]
+
+source_file="res://medias/2_TheChronic.mp3"
+dest_files=[ "res://.import/2_TheChronic.mp3-9871f2e7359a19190efbc300df478938.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/6_Hacked_Trap.mp3-d5d12d07d5e23e274f9eea629cca351e.mp3str"
+
+[deps]
+
+source_file="res://medias/6_Hacked_Trap.mp3"
+dest_files=[ "res://.import/6_Hacked_Trap.mp3-d5d12d07d5e23e274f9eea629cca351e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

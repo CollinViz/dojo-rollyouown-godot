@@ -26,6 +26,7 @@ export const useDojo = () => {
         debugger;
         const new_account = await create();
         window.account = new_account;
+        return JSON.stringify(new_account);
     };
 
     return {

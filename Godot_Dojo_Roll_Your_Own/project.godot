@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "PaletteImporter",
 "language": "GDScript",
 "path": "res://addons/color-palette/PaletteImporter.gd"
+}, {
+"base": "Node",
+"class": "toriiGraphQl",
+"language": "GDScript",
+"path": "res://AutoLoad/graph.gd"
 } ]
 _global_script_class_icons={
 "ColorTile": "",
@@ -57,18 +62,24 @@ _global_script_class_icons={
 "GQLQuery": "",
 "GQLQueryExecuter": "",
 "Palette": "",
-"PaletteImporter": ""
+"PaletteImporter": "",
+"toriiGraphQl": ""
 }
 
 [application]
 
 config/name="Dojo_Roll_Your_Own"
-run/main_scene="res://UI/Main.tscn"
+run/main_scene="res://UI2/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+ToriiServer="*res://AutoLoad/torii_server.tscn"
+Dojo="*res://AutoLoad/Dojo.tscn"
+LevelState="*res://AutoLoad/LevelState.tscn"
+DialogInterface="*res://AutoLoad/DialogInterface.tscn"
+GameState="*res://AutoLoad/game_state.tscn"
 
 [editor_plugins]
 

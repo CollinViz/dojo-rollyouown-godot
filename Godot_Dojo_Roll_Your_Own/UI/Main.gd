@@ -2,13 +2,13 @@ extends Control
 
 
 var _my_js_callback = JavaScript.create_callback(self, "myCallback") # This reference must be kept
-var jsWindow = JavaScript.get_interface("window")
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
 
 
 func myCallback(args):
@@ -30,31 +30,26 @@ func myCallback(args):
 						print("Player pos ",json_result.result[y].x, " ", json_result.result[y].y)
 					"Moves":
 						print("remaining ",json_result.result[y].remaining)
+					_:
+						print("Unexpected data ", JSON.stringify(json_result.result[y]))
 		else:
 			print("JSON Parse Error: ", json_result.error_string(), " in ", args, " at line ", json_result.error_line)
 	
-#	var json_result = JSON.parse(args) 
-#	if json_result.error == OK:
-#		var data_received = json_result.result
-#		if typeof(data_received) == TYPE_ARRAY:
-#			print(data_received) # Prints array
-#		else:
-#			print("Unexpected data")
-#	else:
-#		print("JSON Parse Error: ", json_result.error_string(), " in ", args, " at line ", json_result.error_line)
-
-
 
 func _on_Button_pressed() -> void: 
-	jsWindow.systemCalls.spawn(jsWindow.account).then(_my_js_callback);
+	Dojo.systemCalls.spawn(Dojo.account).then(_my_js_callback);
 	#JavaScript.eval("window.alert('Hello from Godot!');")
 	#JavaScript.eval("window.systemCalls.spawn(window.account);")
 
 
 
 func _on_CreateGame_pressed() -> void:
-	pass # Replace with function body.
+	Dojo.systemCalls.create_game(Dojo.account,0,4,100).then(_my_js_callback);
 
 
 func _on_Burnner_pressed() -> void:
-	pass # Replace with function body.
+	Dojo._account.create().then(_my_js_callback);
+
+
+func _on_ListGames_pressed() -> void:
+	ToriiServer.get_games_list()

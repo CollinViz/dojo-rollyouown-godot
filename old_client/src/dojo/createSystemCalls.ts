@@ -1,5 +1,5 @@
 import { SetupNetworkResult } from "./setupNetwork";
-import { Account, InvokeTransactionReceiptResponse, shortString } from "starknet";
+import { Account, InvokeTransactionReceiptResponse,num, shortString } from "starknet";
 import { EntityIndex, getComponentValue, setComponent } from "@latticexyz/recs";
 import { uuid } from "@latticexyz/utils";
 import { ClientComponents } from "./createClientComponents";
@@ -173,16 +173,8 @@ export function createSystemCalls(
             console.log(tx)
             const receipt = await signer.waitForTransaction(tx.transaction_hash, { retryInterval: 100 })
 
-            const events = parseEvent(receipt)
-            const entity = parseInt(events[0].entity.toString()) as EntityIndex
-            console.log(entity)
-            console.log(events)
-            const movesEvent = events[0] as Moves;
-            
-            setComponent(contractComponents.Moves, entity, { remaining: movesEvent.remaining })
-
-            const positionEvent = events[1] as Position;
-            setComponent(contractComponents.Position, entity, { x: positionEvent.x, y: positionEvent.y })
+            const events = parseEvent(receipt) 
+            console.log(events) 
             return JSON.stringify(events);
         } catch (e) {
             console.log(e)
@@ -290,33 +282,33 @@ export interface Position extends BaseEvent {
     player_id:number;
 
 }
-export interface RandomEventData extends BaseEventData {
+export interface RandomEventData extends BaseEvent {
     playerId: string;
     healthLoss: number;
     mugged: boolean;
     arrested: boolean;
   }
   
-  export interface CreateEventData extends BaseEventData {
+  export interface CreateEventData extends BaseEvent {
     creator: string;
     startTime: number;
     maxTurns: number;
     maxPlayers: number;
   }
   
-  export interface JoinedEventData extends BaseEventData {
+  export interface JoinedEventData extends BaseEvent {
     playerId: string;
     locationName: string;
   }
   
-  export interface BoughtEventData extends BaseEventData {
+  export interface BoughtEventData extends BaseEvent {
     playerId: string;
     drugId: string;
     quantity: number;
     price: number;
   }
   
-  export interface SoldEventData extends BaseEventData {
+  export interface SoldEventData extends BaseEvent {
     playerId: string;
     drugId: string;
     quantity: number;
