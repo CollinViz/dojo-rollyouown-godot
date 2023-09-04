@@ -1,5 +1,9 @@
 # dojo-rollyouown-godot
 
+Based on the backend of 
+https://github.com/cartridge-gg/rollyourown
+
+
 # Implantation
 Used JavaScrip phaser client as a base so I did not need to write a Godot interface to Katana.
 This has a lot of limitation and double code but I felt it would be faster.
